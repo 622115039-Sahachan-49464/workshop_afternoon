@@ -25,18 +25,18 @@ jobs:
 #          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_AFTERNOON_WORKSHOP }}"
 #          projectId: afternoon-workshop
 #          channelId: live
-       - run: flutter build apk
-       - run: flutter build appbundle
-       - name: Archive apk artifacts
-         uses: actions/upload-artifact@v2
-         with:
-           name: My First Flutter apk
-           path: build/app/outputs/flutter-apk/app-release.apk
-       - name: Archive aab artifacts
-         uses: actions/upload-artifact@v2
-         with:
-           name: My First Flutter aab
-           path: build/app/outputs/bundle/release/app-release.aab
+      - run: flutter build apk
+      - run: flutter build appbundle
+      - name: Archive apk artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: My First Flutter apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+      - name: Archive aab artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: My First Flutter aab
+          path: build/app/outputs/bundle/release/app-release.aab
   release:
     name: release to firebase distribution
     needs: build
